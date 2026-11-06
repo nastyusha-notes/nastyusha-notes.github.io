@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Настя Кузьмина — UGC-креатор для бьюти-брендов: сценарий, съёмка и монтаж роликов под ключ.">
+<meta property="og:title" content="Настя Кузьмина — UGC-креатор">
+<meta property="og:description" content="Видео для бьюти-брендов под ключ: сценарий, съёмка, монтаж.">
+<meta property="og:image" content="media/portrait.jpg">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Настя Кузьмина UGC</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:ital,wght@1,500;1,700&display=swap">
+<style>
+/* Layout: a creator's notebook — ruled-paper background, margin line on the left, videos as pinned "pages" in a 2→4 column grid */
+:root{
+  --paper:#F2F1EA;
+  --paper-2:#E8E7DD;
+  --ink:#24261F;
+  --ink-soft:#5E6155;
+  --olive:#5B6B2E;
+  --olive-soft:#DCE2C6;
+  --rule:rgba(91,107,46,.13);
+  --margin:#C9573F;
+  --card:#FBFAF6;
+  --display:"Playfair Display", Georgia, "Times New Roman", serif;
+  --body:"Montserrat", "Helvetica Neue", Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#1B1C17; --paper-2:#24261F; --ink:#ECEBE2; --ink-soft:#A9AC9E;
+  --olive:#AFC27A; --olive-soft:#33391F; --rule:rgba(175,194,122,.09); --margin:#D9785F; --card:#23241E; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#1B1C17; --paper-2:#24261F; --ink:#ECEBE2; --ink-soft:#A9AC9E;
+  --olive:#AFC27A; --olive-soft:#33391F; --rule:rgba(175,194,122,.09); --margin:#D9785F; --card:#23241E; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{
+  background-color:var(--paper);
+  background-image:repeating-linear-gradient(to bottom, transparent 0 31px, var(--rule) 31px 32px);
+  color:var(--ink); font-family:var(--body); font-size:16px; line-height:1.6;
+  padding-left:max(16px, env(safe-area-inset-left, 0px));
+  padding-right:max(16px, env(safe-area-inset-right, 0px));
+}
+.wrap{max-width:1040px; margin:0 auto; padding-block:40px 64px; position:relative; display:flex; flex-direction:column; gap:72px}
+.wrap::before{content:""; position:absolute; top:0; bottom:0; left:-14px; width:1px; background:var(--margin); opacity:.45}
+@media (max-width:640px){.wrap::before{display:none}}
+h1,h2{font-family:var(--display); font-style:italic; font-weight:500; text-wrap:balance; margin:0; line-height:1.1}
+p{margin:0}
+.label{font-size:12px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--olive)}
+em.acc{font-family:var(--display); font-style:italic; font-weight:700; color:var(--olive)}
+
+/* hero */
+.hero{display:grid; grid-template-columns:auto 1fr; gap:32px; align-items:center}
+.portrait{width:168px; aspect-ratio:1; max-width:100%; border-radius:50%; object-fit:cover; border:4px solid var(--card); box-shadow:0 0 0 1px var(--rule)}
+.hero-text{display:flex; flex-direction:column; gap:14px; min-width:0}
+.hero h1{font-size:clamp(40px, 7vw, 68px)}
+.lead{font-size:18px; max-width:56ch; color:var(--ink-soft)}
+.lead b{color:var(--ink); font-weight:600}
+.tags{display:flex; flex-wrap:wrap; gap:8px}
+.tag{font-size:13px; padding:4px 12px; border:1px solid var(--olive); border-radius:999px; color:var(--olive); background:var(--card)}
+@media (max-width:640px){.hero{grid-template-columns:1fr; gap:20px}.portrait{width:120px}}
+
+/* section head */
+.sec{display:flex; flex-direction:column; gap:24px}
+.sec-head{display:flex; flex-direction:column; gap:8px}
+.sec-head h2{font-size:clamp(30px, 4.6vw, 42px)}
+.sec-head p{color:var(--ink-soft); max-width:60ch}
+
+/* videos */
+.grid{display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); gap:20px}
+@media (max-width:900px){.grid{grid-template-columns:repeat(2, minmax(0,1fr))}}
+.clip{display:flex; flex-direction:column; gap:10px; min-width:0}
+.clip video{width:100%; max-width:100%; aspect-ratio:9/16; object-fit:cover; border-radius:14px; background:var(--paper-2); display:block}
+.clip h3{font-size:15px; font-weight:600; margin:0; line-height:1.35}
+.clip p{font-size:13px; color:var(--ink-soft)}
+.kind{font-size:11px; font-weight:600; letter-spacing:.12em; text-transform:uppercase; color:var(--olive)}
+
+/* numbers */
+.stats{display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:20px}
+@media (max-width:640px){.stats{grid-template-columns:1fr}}
+.stat{display:flex; flex-direction:column; gap:4px; padding-block:16px; border-top:2px solid var(--olive)}
+.stat b{font-family:var(--display); font-style:italic; font-weight:700; font-size:40px; line-height:1; font-variant-numeric:tabular-nums}
+.stat span{font-size:14px; color:var(--ink-soft)}
+.note{font-size:13px; color:var(--ink-soft)}
+
+/* experience */
+.two{display:grid; grid-template-columns:1fr 1fr; gap:32px}
+@media (max-width:760px){.two{grid-template-columns:1fr}}
+.list{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:14px}
+.list li{display:flex; flex-direction:column; gap:2px; padding-left:18px; position:relative}
+.list li::before{content:"—"; position:absolute; left:0; color:var(--olive)}
+.list strong{font-weight:600}
+.list span{font-size:14px; color:var(--ink-soft)}
+
+/* prices */
+.prices{display:flex; flex-direction:column; background:var(--card); border-radius:16px; padding:8px 24px; box-shadow:0 0 0 1px var(--rule)}
+.row{display:grid; grid-template-columns:1fr auto; gap:16px; align-items:baseline; padding-block:16px; border-bottom:1px dashed var(--rule)}
+.row:last-child{border-bottom:0}
+.row div{display:flex; flex-direction:column; gap:2px; min-width:0}
+.row strong{font-weight:600}
+.row span{font-size:14px; color:var(--ink-soft)}
+.price{font-family:var(--display); font-style:italic; font-weight:700; font-size:22px; color:var(--olive); white-space:nowrap; font-variant-numeric:tabular-nums}
+
+/* contact */
+.contact{display:flex; flex-direction:column; gap:20px; padding:32px; border-radius:20px; background:var(--olive-soft)}
+.contact h2{font-size:clamp(30px, 4.6vw, 42px)}
+.contact-rows{display:flex; flex-wrap:wrap; gap:12px}
+.chip{display:inline-flex; align-items:center; gap:10px; padding:10px 16px; border-radius:12px; background:var(--card); color:var(--ink); font-size:15px; text-decoration:none; border:1px solid var(--rule); max-width:100%}
+.chip .k{font-size:11px; font-weight:600; letter-spacing:.12em; text-transform:uppercase; color:var(--olive)}
+.chip .v{user-select:all; overflow-wrap:anywhere}
+button.chip{font-family:var(--body); cursor:pointer}
+.chip:focus-visible, video:focus-visible{outline:2px solid var(--olive); outline-offset:3px}
+footer{font-size:12px; color:var(--ink-soft)}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header class="hero">
+    <img class="portrait" src="media/portrait.jpg" alt="Настя Кузьмина">
+    <div class="hero-text">
+      <span class="label">UGC-креатор · бьюти и уход · Москва</span>
+      <h1>Настя Кузьмина</h1>
+      <p class="lead">Снимаю видео для бьюти-брендов <b>под ключ</b>: придумываю идею, пишу сценарий, снимаю и монтирую. Учусь на маркетолога, поэтому думаю не только о красивой картинке, но и о том, <b>почему зритель досмотрит и купит</b>.</p>
+      <div class="tags">
+        <span class="tag">говорящая голова</span>
+        <span class="tag">текстуры крупно</span>
+        <span class="tag">нанесение</span>
+        <span class="tag">эстетика без слов</span>
+        <span class="tag">разбор состава</span>
+      </div>
+    </div>
+  </header>
+
+  <section class="sec" aria-labelledby="works">
+    <div class="sec-head">
+      <span class="label">Работы</span>
+      <h2 id="works">Что я снимаю</h2>
+      <p>Каждый ролик — от сценария до монтажа: хук в первые секунды, текстура или наглядный пример в кадре и понятный текст на экране.</p>
+    </div>
+    <div class="grid">
+      <article class="clip">
+        <video src="media/enzyme-mask.mp4" poster="media/enzyme-mask.jpg" controls playsinline preload="none"></video>
+        <span class="kind">Реклама · текстура на лице</span>
+        <h3>Энзимная пудра как маска</h3>
+        <p>Процесс от пудры до умытого лица. Формат, который набирал у меня больше всего просмотров в Shorts.</p>
+      </article>
+      <article class="clip">
+        <video src="media/guasha.mp4" poster="media/guasha.jpg" controls playsinline preload="none"></video>
+        <span class="kind">Уход · эстетика</span>
+        <h3>Гуаша из ледяной воды</h3>
+        <p>Утренний ритуал: охлаждение, массаж и спокойный ритм кадров.</p>
+      </article>
+      <article class="clip">
+        <video src="media/four-words.mp4" poster="media/four-words.jpg" controls playsinline preload="none"></video>
+        <span class="kind">Сценарий · экспертиза</span>
+        <h3>4 слова на упаковке, которым я не верю</h3>
+        <p>Маркетинговый разбор упаковки косметики с графикой поверх кадра.</p>
+      </article>
+      <article class="clip">
+        <video src="media/colors.mp4" poster="media/colors.jpg" controls playsinline preload="none"></video>
+        <span class="kind">Сценарий · экспертиза</span>
+        <h3>Цвет упаковки решает за тебя</h3>
+        <p>Как цвет флакона влияет на выбор: говорящая голова и подписи в стиле блога.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="sec" aria-labelledby="numbers">
+    <div class="sec-head">
+      <span class="label">Цифры</span>
+      <h2 id="numbers">Охваты моих роликов</h2>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>27,9 тыс.</b><span>просмотров на YouTube Shorts за первый месяц</span></div>
+      <div class="stat"><b>9,3 тыс.</b><span>просмотров за одну неделю</span></div>
+      <div class="stat"><b>1,6 тыс.</b><span>просмотров у лучшего ролика — маска на лице</span></div>
+    </div>
+    <p class="note">Статистика нового аккаунта, без рекламы и накруток.</p>
+  </section>
+
+  <section class="sec" aria-labelledby="exp">
+    <div class="sec-head">
+      <span class="label">Опыт</span>
+      <h2 id="exp">Почему со мной удобно</h2>
+    </div>
+    <div class="two">
+      <ul class="list">
+        <li><strong>4 года в SMM бьюти-брендов</strong><span>7DAYS и B.COLOUR PROFESSIONAL: идеи, сценарии, съёмка до 15 роликов в неделю, монтаж Reels, сторис, контент-план и визуальный стиль</span></li>
+        <li><strong>UGC для бренда ухода VOIS</strong><span>рекламные ролики для маркетплейса: сыворотки, маски, уход за телом и губами</span></li>
+        <li><strong>Учусь на маркетолога</strong><span>строю ролик вокруг боли покупателя и понятной выгоды</span></li>
+      </ul>
+      <ul class="list">
+        <li><strong>Художественное и дизайнерское образование</strong><span>композиция, свет и цвет в кадре</span></li>
+        <li><strong>Монтаж и цвет</strong><span>CapCut, Figma, цветокоррекция, в том числе съёмка в Apple Log</span></li>
+        <li><strong>Быстро</strong><span>умею снимать большими пакетами: десятки роликов за съёмочный день</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec" aria-labelledby="price">
+    <div class="sec-head">
+      <span class="label">Услуги</span>
+      <h2 id="price">Стоимость</h2>
+    </div>
+    <div class="prices">
+      <div class="row"><div><strong>Сценарий для ролика</strong><span>хук, текст и раскадровка под ваш продукт</span></div><span class="price">от 999 ₽</span></div>
+      <div class="row"><div><strong>Съёмка без монтажа</strong><span>исходники по вашему сценарию или моему</span></div><span class="price">от 1 500 ₽</span></div>
+      <div class="row"><div><strong>1 видео под ключ</strong><span>сценарий, съёмка, монтаж, цвет и текст на экране</span></div><span class="price">от 2 500 ₽</span></div>
+      <div class="row"><div><strong>Пакет из 3 видео</strong><span>разные форматы под один продукт</span></div><span class="price">от 6 500 ₽</span></div>
+      <div class="row"><div><strong>Права на рекламу</strong><span>использование роликов в таргете и на маркетплейсах</span></div><span class="price">+30%</span></div>
+    </div>
+  </section>
+
+  <section class="contact" aria-labelledby="contact">
+    <h2 id="contact">Давайте снимем ваш продукт</h2>
+    <p>Напишите, что за продукт и для какой площадки нужны ролики — пришлю идеи и сроки.</p>
+    <div class="contact-rows">
+      <button class="chip" type="button" id="copy-mail" aria-label="Скопировать почту"><span class="k">Почта</span><span class="v">anastasiakuzmina006@gmail.com</span></button>
+      <a class="chip" href="https://www.instagram.com/nastyusha_notes/" target="_blank" rel="noopener"><span class="k">Instagram</span><span class="v">@nastyusha_notes</span></a>
+    </div>
+  </section>
+
+  <footer>© Настя Кузьмина · nastyusha_notes</footer>
+</div>
+
+<script>
+document.getElementById('copy-mail').addEventListener('click', function(){
+  var btn=this, v=btn.querySelector('.v'), text='anastasiakuzmina006@gmail.com';
+  var done=function(){var k=btn.querySelector('.k'); k.textContent='Скопировано'; setTimeout(function(){k.textContent='Почта'},1600)};
+  var sel=function(){var r=document.createRange(); r.selectNodeContents(v); var s=getSelection(); s.removeAllRanges(); s.addRange(r)};
+  try{navigator.clipboard.writeText(text).then(done, sel)}catch(e){sel()}
+});
+document.querySelectorAll('video').forEach(function(v){
+  v.addEventListener('play', function(){document.querySelectorAll('video').forEach(function(o){if(o!==v) o.pause()})});
+});
+</script>
+
+</body>
+</html>
